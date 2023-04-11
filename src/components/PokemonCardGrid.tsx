@@ -57,10 +57,10 @@ function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
                   alt="pokemon"
                   className="pokemon-card-image"
                   loading="lazy"
-                  onClick={() => {
+                  onClick={async () => {
                     dispatch(setPokemonTab(pokemonTabs.description));
                     dispatch(setCurrentPokemon(undefined));
-                    navigate(`/pokemon/${data.id}`);
+                    await navigate(`/pokemon/${data.id}`);
                   }}
                 />
                 <div className="pokemon-card-types">
